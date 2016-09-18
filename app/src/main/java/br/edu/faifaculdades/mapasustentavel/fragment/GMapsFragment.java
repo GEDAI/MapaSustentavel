@@ -1,11 +1,16 @@
-package br.edu.faifaculdades.mapasustentavel;
+package br.edu.faifaculdades.mapasustentavel.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -13,12 +18,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
+
+import br.edu.faifaculdades.mapasustentavel.PermissionUtils;
+import br.edu.faifaculdades.mapasustentavel.R;
+import br.edu.faifaculdades.mapasustentavel.adapter.MarcadorAdapter;
+import br.edu.faifaculdades.mapasustentavel.dao.MapaSustentavelDAO;
+import br.edu.faifaculdades.mapasustentavel.model.Marcador;
 
 
 public class GMapsFragment extends Fragment
@@ -41,11 +57,21 @@ public class GMapsFragment extends Fragment
      */
     private boolean mPermissionDenied = false;
 
+    private List<Marcador> marcadores;
+    private MapaSustentavelDAO dao;
+
     private GoogleMap mMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        this.dao = new MapaSustentavelDAO(this.getContext());
+
+        this.marcadores = this.dao.buscarMarcadores();
+
+        //setListAdapter(new MarcadorAdapter(this.getContext(), this.marcadores));
+
         return inflater.inflate(R.layout.fragment_maps, container, false);
     }
 
@@ -63,7 +89,9 @@ public class GMapsFragment extends Fragment
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setOnMapLongClickListener(this);
         mMap.setOnMyLocationButtonClickListener(this);
-        enableMyLocation();
+
+        this.setUpMap();
+        this.addMarcadores();
     }
 
     /**
@@ -82,18 +110,22 @@ public class GMapsFragment extends Fragment
     }
 
     @Override
-    public void onMapLongClick(LatLng point) {
-        mMap.addMarker(new MarkerOptions()
-                .position(point)
-                .draggable(true)
-                .title("Entulho")
-                .snippet("Muito entulho encontrado neste local.")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+    public void onMapLongClick(LatLng localizacao) {
+
+        final AddLocalFragment addLocalFragment = new AddLocalFragment().newInstance(mMap, localizacao);
+
+        final FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragment_container, addLocalFragment);
+
+        transaction.addToBackStack(null);
+
+        transaction.commit();
     }
 
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this.getContext(), "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getContext(), "Centralizado no local atual.", Toast.LENGTH_SHORT).show();
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).
         return false;
@@ -116,4 +148,61 @@ public class GMapsFragment extends Fragment
         }
     }
 
+
+    private void addMarcadores(){
+
+        for (int i = 0; i < marcadores.size(); i++) {
+
+            LatLng posicao = new LatLng(marcadores.get(i).getLatitude(), marcadores.get(i).getLongitude());
+
+            String titulo = marcadores.get(i).getTitulo();
+
+            final BitmapDescriptor bitmapDescriptor;
+
+            if (marcadores.get(i).getCategoria() != null && marcadores.get(i).getCategoria().equals("Entulho")) {
+                bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED);
+            } else {
+                bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE);
+            }
+
+            mMap.addMarker(new MarkerOptions()
+                    .position(posicao)
+                    .draggable(true)
+                    .title(titulo)
+                    .snippet(marcadores.get(i).getDescricao())
+                    .icon(bitmapDescriptor));
+        }
+    }
+
+    private void setUpMap() throws SecurityException {
+        // Enable MyLocation Layer of Google Map
+        enableMyLocation();
+
+        // Get LocationManager object from System Service LOCATION_SERVICE
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+
+        // Create a criteria object to retrieve provider
+        Criteria criteria = new Criteria();
+
+        // Get the name of the best provider
+        String provider = locationManager.getBestProvider(criteria, true);
+
+        // Get Current Location
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+
+        // Get latitude of the current location
+        double latitude = myLocation.getLatitude();
+
+        // Get longitude of the current location
+        double longitude = myLocation.getLongitude();
+
+        // Create a LatLng object for the current location
+        LatLng latLng = new LatLng(latitude, longitude);
+
+        // Show the current location in Google Map
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        // Zoom in the Google Map
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+    }
 }

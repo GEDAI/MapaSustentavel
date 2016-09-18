@@ -22,4 +22,22 @@
     <string name="welcome">Bem-Vindo!</string>
     <string name="btn_logout">SAIR</string>
     <string name="name">Nome Completo</string>
+
+    <string name="hello_blank_fragment">Adicionar Novo Marcador</string>
+    <string name="Descrição">Descrição:</string>
+    <string name="Endereço">Endereço:</string>
+    <string name="Situação">Situação:</string>
+    <string name="Imagem">+</string>
+    <string name="Categoria">Categoria:</string>
+    <string name="Titulo">Titulo</string>
+    <string name="Camera">Camera</string>
+    <string name="Galeria">Galeria</string>
+    <string name="Adapter">adapter</string>
+    <string name="marcador_salvo">Marcador salvo com sucesso!</string>
+    <string name="erro_salvar">Erro ao salvar marcador.</string>
+
+    <string-array name="Lixo_array">
+        <item>Entulho</item>
+        <item>Oleo</item>
+    </string-array>
 </resources>
