@@ -95,20 +95,23 @@ public abstract class MapUtils extends Fragment implements
         // Get Current Location
         Location myLocation = locationManager.getLastKnownLocation(provider);
 
-        // Get latitude of the current location
-        double latitude = myLocation.getLatitude();
+        if(myLocation != null) {
 
-        // Get longitude of the current location
-        double longitude = myLocation.getLongitude();
+            // Get latitude of the current location
+            double latitude = myLocation.getLatitude();
 
-        // Create a LatLng object for the current location
-        LatLng latLng = new LatLng(latitude, longitude);
+            // Get longitude of the current location
+            double longitude = myLocation.getLongitude();
 
-        // Show the current location in Google Map
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            // Create a LatLng object for the current location
+            LatLng latLng = new LatLng(latitude, longitude);
 
-        // Zoom in the Google Map
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+            // Show the current location in Google Map
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+            // Zoom in the Google Map
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        }
     }
 
 }
