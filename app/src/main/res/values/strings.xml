@@ -38,7 +38,15 @@
 
     <string-array name="Lixo_array">
         <item>Entulho</item>
-        <item>Oleo</item>
+        <item>Lixo Resiclável</item>
+    </string-array>
+
+    <string-array name="tipo_residuos_array">
+        <item>Sem Filtros</item>
+        <item>Metal</item>
+        <item>Vidro</item>
+        <item>Papel</item>
+        <item>Plástico</item>
     </string-array>
 
     <string name="cardview_contents">This is a CardView widget. CardView widgets can have
