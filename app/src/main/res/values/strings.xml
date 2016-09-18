@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">MapaSustentavel</string>
+    <string name="app_name">Mapa Sustentável</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
 
     <!--    Permissions    -->
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
@@ -13,13 +13,13 @@
 
     <!-- Web Service (Login e Registration) -->
     <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_name">Fullname</string>
-    <string name="btn_login">LOGIN</string>
-    <string name="btn_register">REGISTER</string>
-    <string name="btn_link_to_register">Not a member? Sign up now.</string>
-    <string name="btn_link_to_login">Already registred! Login Me.</string>
-    <string name="welcome">Welcome</string>
-    <string name="btn_logout">LOGOUT</string>
-    <string name="name">Fullname</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_name">Nome Completo</string>
+    <string name="btn_login">ENTRAR</string>
+    <string name="btn_register">REGISTRAR</string>
+    <string name="btn_link_to_register">Não possui conta? Registre-se!</string>
+    <string name="btn_link_to_login">Já Registrado! Entre.</string>
+    <string name="welcome">Bem-Vindo!</string>
+    <string name="btn_logout">SAIR</string>
+    <string name="name">Nome Completo</string>
 </resources>
