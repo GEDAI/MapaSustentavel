@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onMarcadorAdicionarSelected() {
+    public void onMarcadorAcaoSelected() {
 
         FragmentManager fm = getSupportFragmentManager();
 

@@ -68,7 +68,7 @@ public class GMapsFragment extends MapUtils
         mMap.setOnMapLongClickListener(this);
         mMap.setOnMyLocationButtonClickListener(this);
 
-        this.setUpMap();
+        super.setUpMap();
         this.addMarcadores();
     }
 

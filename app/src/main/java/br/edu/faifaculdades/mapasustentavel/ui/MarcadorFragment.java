@@ -32,20 +32,17 @@ public class MarcadorFragment extends Fragment {
     private long marcador_id = -1;
 
     private Button btnAdicionar;
+    private Button btnCancelar;
     private EditText txtTitulo;
     private EditText txtDescricao;
     private String categoria;
     private MapaSustentavelDAO dao;
-    private View view;
 
     private static GoogleMap mMap;
     private static LatLng localizacao;
 
     private OnMarcadorListener mListener;
 
-    public MarcadorFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -85,6 +82,7 @@ public class MarcadorFragment extends Fragment {
         txtDescricao = (EditText) rootView.findViewById(R.id.txtDescricao);
 
         btnAdicionar = (Button) rootView.findViewById(R.id.btnAdicionar);
+        btnCancelar = (Button) rootView.findViewById(R.id.btnCancelar);
 
         Spinner spinner = (Spinner) rootView.findViewById(R.id.Lixo);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -130,12 +128,22 @@ public class MarcadorFragment extends Fragment {
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.marcador_salvo), Toast.LENGTH_SHORT).show();
 
                     // Notify the parent activity of selected item
-                    mListener.onMarcadorAdicionarSelected();
+                    mListener.onMarcadorAcaoSelected();
                 } else{
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.erro_salvar), Toast.LENGTH_SHORT).show();
                 }
             }
 
+        });
+
+        // Tratar evento de cancelar adição de marcador no mapa
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // Notify the parent activity of selected item
+                mListener.onMarcadorAcaoSelected();
+            }
         });
 
         // Inflate the layout for this fragment
@@ -179,6 +187,6 @@ public class MarcadorFragment extends Fragment {
 
         void onFragmentInteraction(Uri uri);
 
-        void onMarcadorAdicionarSelected();
+        void onMarcadorAcaoSelected();
     }
 }
