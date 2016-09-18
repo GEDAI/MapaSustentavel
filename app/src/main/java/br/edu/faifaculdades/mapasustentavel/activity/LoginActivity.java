@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.edu.faifaculdades.mapasustentavel.MainActivity;
+import br.edu.faifaculdades.mapasustentavel.ui.MainActivity;
 import br.edu.faifaculdades.mapasustentavel.R;
 import br.edu.faifaculdades.mapasustentavel.app.AppConfig;
 import br.edu.faifaculdades.mapasustentavel.app.AppController;
