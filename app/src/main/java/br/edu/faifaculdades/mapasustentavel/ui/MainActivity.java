@@ -29,16 +29,6 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, GMapsFragment.newInstance()).commit();
         }
 
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -62,7 +52,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        //getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -93,6 +83,8 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.fragment_container, new GMapsFragment()).commit();
         } else if (id == R.id.nav_pontos_recolha) {
             fm.beginTransaction().replace(R.id.fragment_container, new PontosRecolhaFragment()).commit();
+        } else if (id == R.id.nav_horaios_recolha) {
+            fm.beginTransaction().replace(R.id.fragment_container, new HorariosRecolhaFragment()).commit();
         } else if (id == R.id.nav_avisos) {
             fm.beginTransaction().replace(R.id.fragment_container, new AvisosFragment()).commit();
         } else if (id == R.id.nav_eventos) {

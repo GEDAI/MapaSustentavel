@@ -22,34 +22,6 @@ public class AvisosFragment extends Fragment {
     //@VisibleForTesting
     CardView mCardView;
 
-    /**
-     * SeekBar that changes the cornerRadius attribute for the {@link #mCardView} widget.
-     */
-    //@VisibleForTesting
-    SeekBar mRadiusSeekBar;
-
-    /**
-     * SeekBar that changes the Elevation attribute for the {@link #mCardView} widget.
-     */
-    //@VisibleForTesting
-    SeekBar mElevationSeekBar;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment NotificationFragment.
-     */
-    public static AvisosFragment newInstance() {
-        AvisosFragment fragment = new AvisosFragment();
-        fragment.setRetainInstance(true);
-        return fragment;
-    }
-
-    public AvisosFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

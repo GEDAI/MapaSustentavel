@@ -3,7 +3,7 @@
  * URL: www.androidhive.info
  * twitter: http://twitter.com/ravitamada
  */
-package br.edu.faifaculdades.mapasustentavel.activity;
+package br.edu.faifaculdades.mapasustentavel.ui;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,7 +26,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.edu.faifaculdades.mapasustentavel.ui.MainActivity;
 import br.edu.faifaculdades.mapasustentavel.R;
 import br.edu.faifaculdades.mapasustentavel.app.AppConfig;
 import br.edu.faifaculdades.mapasustentavel.app.AppController;

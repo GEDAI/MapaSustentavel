@@ -38,7 +38,7 @@
 
     <string-array name="Lixo_array">
         <item>Entulho</item>
-        <item>Lixo Resiclável</item>
+        <item>Lixo Reciclável</item>
     </string-array>
 
     <string-array name="tipo_residuos_array">

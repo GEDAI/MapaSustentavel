@@ -7,12 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.AdapterView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
@@ -124,18 +124,14 @@ public class MarcadorFragment extends Fragment {
 
                 long resultado;
 
-                //if(marcador_id == -1){
-                    resultado = dao.inserir(marcador);
-                //}else{
-                //    resultado = dao.atualizar(livro, livro_id);
-                //}
+                resultado = dao.inserir(marcador);
 
                 if(resultado != -1 ){
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.marcador_salvo), Toast.LENGTH_SHORT).show();
 
                     // Notify the parent activity of selected item
                     mListener.onMarcadorAdicionarSelected();
-                }else{
+                } else{
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.erro_salvar), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -146,7 +142,6 @@ public class MarcadorFragment extends Fragment {
         return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -181,7 +176,7 @@ public class MarcadorFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnMarcadorListener {
-        // TODO: Update argument type and name
+
         void onFragmentInteraction(Uri uri);
 
         void onMarcadorAdicionarSelected();
