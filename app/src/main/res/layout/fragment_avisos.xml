@@ -26,7 +26,7 @@ android:layout_width="match_parent" >
     <android.support.v7.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:elevation="100dp"
         android:layout_marginTop="@dimen/nav_header_vertical_spacing"
         android:layout_marginLeft="@dimen/nav_header_vertical_spacing"
@@ -37,25 +37,25 @@ android:layout_width="match_parent" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cardview_contents"
+            android:text="@string/aviso1"
             />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardview2"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:elevation="100dp"
         android:layout_marginTop="@dimen/nav_header_vertical_spacing"
         android:layout_marginLeft="@dimen/nav_header_vertical_spacing"
         android:layout_marginRight="@dimen/nav_header_vertical_spacing"
-        card_view:cardBackgroundColor="@color/cardview_initial_background"
+        card_view:cardBackgroundColor="@color/bg_login"
         card_view:cardCornerRadius="4dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cardview_contents"
+            android:text="@string/aviso2"
             />
     </android.support.v7.widget.CardView>
 

@@ -26,36 +26,18 @@
         <android.support.v7.widget.CardView
             android:id="@+id/eventos_card1"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:elevation="100dp"
             android:layout_marginTop="@dimen/nav_header_vertical_spacing"
             android:layout_marginLeft="@dimen/nav_header_vertical_spacing"
             android:layout_marginRight="@dimen/nav_header_vertical_spacing"
-            card_view:cardBackgroundColor="@color/cardview_initial_background"
+            card_view:cardBackgroundColor="@color/colorAccent"
             card_view:cardCornerRadius="4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cardview_contents"
-                />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/eventos_card2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:elevation="100dp"
-            android:layout_marginTop="@dimen/nav_header_vertical_spacing"
-            android:layout_marginLeft="@dimen/nav_header_vertical_spacing"
-            android:layout_marginRight="@dimen/nav_header_vertical_spacing"
-            card_view:cardBackgroundColor="@color/cardview_initial_background"
-            card_view:cardCornerRadius="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cardview_contents"
+                android:text="@string/evento1"
                 />
         </android.support.v7.widget.CardView>
 

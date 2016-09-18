@@ -49,10 +49,17 @@
         <item>Plástico</item>
     </string-array>
 
-    <string name="cardview_contents">This is a CardView widget. CardView widgets can have
-        shadows and rounded corners.
-        \n\nTo create a card with a shadow, use the <font fgcolor="#FFFFFFFF">android:elevation</font>
-        attribute.
-        \n\nTo set the corner radius in your layouts, use the <font fgcolor="#FFFFFFFF">card_view:cardCornerRadius</font> attribute.
+    <string name="aviso1">Dias para coleta de lixo na sua cidade:
+        Segunda-Feira
+        Quarta-Feira
+        Sexta-Feira
     </string>
+
+    <string name="aviso2">
+        Cuide do meio ambiente!
+    </string>
+
+    <string name="evento1">Mutirão de coleta de lixo neste domingo (18 de setembro), às 9:00hs!
+    </string>
+
 </resources>
