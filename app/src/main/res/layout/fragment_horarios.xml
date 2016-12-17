@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.edu.faifaculdades.mapasustentavel.ui.HorariosFragment">
+
+
+    <!-- Linha -->
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+        <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/lixoumido"
+            android:paddingTop="30dp"
+            android:paddingLeft="20dp"
+            android:id="@+id/imageView" />
+
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical"
+            android:paddingTop="35dp"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/diarecolhamolhado"
+                android:layout_width="match_parent"
+                android:text="Dias"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/diarecolhamolhado1"
+                android:layout_width="251dp"
+                android:text="Segunda                       Sabádo"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/horarecolhamolhado"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Horarios"/>
+
+            <TextView
+                android:id="@+id/horarecolhamolhado1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="18:00                              20:30" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/lixoseco"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="35dp"
+            android:layout_weight="1.13"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/diarecolhaseco"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Dias" />
+
+            <TextView
+                android:layout_width="251dp"
+                android:layout_height="30dp"
+                android:text="Terça                            Sabádo" />
+
+            <TextView
+                android:id="@+id/horarecolhaseco"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Horarios"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="18:00                              20:30" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

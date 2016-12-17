@@ -63,4 +63,9 @@
     <string name="evento1">Mutirão de coleta de lixo neste domingo (18 de setembro), às 9:00hs!
     </string>
 
+    <string name="dias">Dias:</string>
+    <string name="diasemana" />
+    <string name="horario" />
+    <string name="horas" />
+
 </resources>

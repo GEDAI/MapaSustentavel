@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_mapa) {
             fm.beginTransaction().replace(R.id.fragment_container, new GMapsFragment()).commit();
         } else if (id == R.id.nav_horaios_recolha) {
-            fm.beginTransaction().replace(R.id.fragment_container, new HorariosRecolhaFragment()).commit();
+            fm.beginTransaction().replace(R.id.fragment_container, new HorariosFragment()).commit();
         } else if (id == R.id.nav_avisos) {
             fm.beginTransaction().replace(R.id.fragment_container, new AvisosFragment()).commit();
         } else if (id == R.id.nav_eventos) {
