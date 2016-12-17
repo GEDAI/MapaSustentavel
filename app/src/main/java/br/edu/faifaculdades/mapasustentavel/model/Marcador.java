@@ -6,7 +6,7 @@ import java.io.Serializable;
  *
  */
 public class Marcador implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private final long serialVersionUID = 1L;
 
     private Long id;
     private double latitude;

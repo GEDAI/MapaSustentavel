@@ -48,7 +48,7 @@ public class MarcadorFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param mMap Parameter 1.
+     * @param mMap        Parameter 1.
      * @param localizacao Parameter 2.
      * @return A new instance of fragment MarcadorFragment.
      */
@@ -124,12 +124,12 @@ public class MarcadorFragment extends Fragment {
 
                 resultado = dao.inserir(marcador);
 
-                if(resultado != -1 ){
+                if (resultado != -1) {
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.marcador_salvo), Toast.LENGTH_SHORT).show();
 
                     // Notify the parent activity of selected item
                     mListener.onMarcadorAcaoSelected();
-                } else{
+                } else {
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.erro_salvar), Toast.LENGTH_SHORT).show();
                 }
             }

@@ -43,10 +43,11 @@
 
     <string-array name="tipo_residuos_array">
         <item>Sem Filtros</item>
-        <item>Metal</item>
-        <item>Vidro</item>
-        <item>Papel</item>
-        <item>Plástico</item>
+        <item>Pontos de recolha de Metal</item>
+        <item>Pontos de recolha de Vidro</item>
+        <item>Pontos de recolha de Papel</item>
+        <item>Ponto de recolha de Plástico</item>
+        <item>Pontos de Denúncias</item>
     </string-array>
 
     <string name="aviso1">Dias para coleta de lixo na sua cidade:

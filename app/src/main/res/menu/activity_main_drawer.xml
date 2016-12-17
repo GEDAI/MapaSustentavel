@@ -7,10 +7,6 @@
             android:icon="@drawable/ic_menu_map"
             android:title="Mapa" />
         <item
-            android:id="@+id/nav_pontos_recolha"
-            android:icon="@drawable/ic_menu_location"
-            android:title="Pontos de Recolha" />
-        <item
             android:id="@+id/nav_horaios_recolha"
             android:icon="@drawable/ic_menu_hours"
             android:title="Horários de Recolha" />

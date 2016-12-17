@@ -50,13 +50,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -81,8 +74,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_mapa) {
             fm.beginTransaction().replace(R.id.fragment_container, new GMapsFragment()).commit();
-        } else if (id == R.id.nav_pontos_recolha) {
-            fm.beginTransaction().replace(R.id.fragment_container, new PontosRecolhaFragment()).commit();
         } else if (id == R.id.nav_horaios_recolha) {
             fm.beginTransaction().replace(R.id.fragment_container, new HorariosRecolhaFragment()).commit();
         } else if (id == R.id.nav_avisos) {
