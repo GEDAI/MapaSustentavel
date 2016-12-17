@@ -19,7 +19,10 @@ import com.google.android.gms.maps.model.LatLng;
 
 import br.edu.faifaculdades.mapasustentavel.R;
 import br.edu.faifaculdades.mapasustentavel.dao.MapaSustentavelDAO;
+import br.edu.faifaculdades.mapasustentavel.model.MapaDatabase;
+import br.edu.faifaculdades.mapasustentavel.model.Marcacao;
 import br.edu.faifaculdades.mapasustentavel.model.Marcador;
+import br.edu.faifaculdades.mapasustentavel.utils.PermissionUtils;
 
 
 /**
@@ -112,19 +115,21 @@ public class MarcadorFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
 
-                Marcador marcador = new Marcador();
+                PermissionUtils.verifyLogin();
 
-                marcador.setLatitude(MarcadorFragment.localizacao.latitude);
-                marcador.setLongitude(MarcadorFragment.localizacao.longitude);
-                marcador.setTitulo(txtTitulo.getText().toString());
-                marcador.setDescricao(txtDescricao.getText().toString());
-                marcador.setCategoria(categoria);
+                double latitude = MarcadorFragment.localizacao.latitude;
+                double longitude = MarcadorFragment.localizacao.longitude;
 
-                long resultado;
+                Marcacao marcacao = new Marcacao("guilherme", latitude, longitude);
+                marcacao.setCategoria(categoria);
+                marcacao.setDescricao(txtDescricao.getText().toString());
+                marcacao.setTitulo(txtTitulo.getText().toString());
+                marcacao.setImagens("img1|img2|img3|img4|img5");
 
-                resultado = dao.inserir(marcador);
+                MapaDatabase database = new MapaDatabase();
+                String chave = database.postarMarcacao(marcacao);
 
-                if (resultado != -1) {
+                if (chave != null) {
                     Toast.makeText(MarcadorFragment.this.getContext(), getString(R.string.marcador_salvo), Toast.LENGTH_SHORT).show();
 
                     // Notify the parent activity of selected item

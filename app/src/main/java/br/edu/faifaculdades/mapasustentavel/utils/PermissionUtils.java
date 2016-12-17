@@ -11,6 +11,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import br.edu.faifaculdades.mapasustentavel.R;
 
 /**
@@ -166,4 +168,12 @@ public abstract class PermissionUtils {
             }
         }
     }
+
+    public static void verifyLogin() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() == null)
+            mAuth.signInWithEmailAndPassword("gedai@seifai.edu.br", "gedai@)!&");
+        //mAuth.signInAnonymously();
+    }
+
 }

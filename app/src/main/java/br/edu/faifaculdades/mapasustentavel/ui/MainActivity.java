@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import br.edu.faifaculdades.mapasustentavel.R;
 
 public class MainActivity extends AppCompatActivity

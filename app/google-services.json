@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "143520456278",
-    "firebase_url": "https://mapasustentavel-cc764.firebaseio.com",
-    "project_id": "mapasustentavel-cc764",
-    "storage_bucket": "mapasustentavel-cc764.appspot.com"
+    "project_number": "59750043513",
+    "firebase_url": "https://genuine-octagon-138523.firebaseio.com",
+    "project_id": "genuine-octagon-138523",
+    "storage_bucket": "genuine-octagon-138523.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:143520456278:android:b7acc505d8d24153",
+        "mobilesdk_app_id": "1:59750043513:android:b7acc505d8d24153",
         "android_client_info": {
           "package_name": "br.edu.faifaculdades.mapasustentavel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "143520456278-rqt70b465cpt828b1pn9nrlc7tf4eobo.apps.googleusercontent.com",
+          "client_id": "59750043513-hcva0hm393osncr36maelhlqr9oe7ntg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMIYKr4pWNpXqwvkRjlS7MlN-h7u1AVUc"
+          "current_key": "AIzaSyD4uZypRz8EyqpVl7dHPtsouciHI9OoCcc"
         }
       ],
       "services": {

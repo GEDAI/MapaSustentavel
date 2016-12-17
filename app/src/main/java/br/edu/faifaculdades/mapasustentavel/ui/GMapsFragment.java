@@ -17,11 +17,16 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.List;
 
 import br.edu.faifaculdades.mapasustentavel.R;
 import br.edu.faifaculdades.mapasustentavel.dao.MapaSustentavelDAO;
+import br.edu.faifaculdades.mapasustentavel.model.MapaDatabase;
+import br.edu.faifaculdades.mapasustentavel.model.Marcacao;
 import br.edu.faifaculdades.mapasustentavel.model.Marcador;
 
 import android.view.LayoutInflater;
@@ -197,26 +202,52 @@ public class GMapsFragment extends MapUtils
 
     private void addMarcadores() {
 
-        for (int i = 0; i < this.marcadores.size(); i++) {
+        MapaDatabase mapaDatabase = new MapaDatabase();
 
-            LatLng posicao = new LatLng(marcadores.get(i).getLatitude(), marcadores.get(i).getLongitude());
+        mapaDatabase.recuperarMarcacoes(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Marcacao marcacao = dataSnapshot.getValue(Marcacao.class);
 
-            String titulo = marcadores.get(i).getTitulo();
+                LatLng posicao = new LatLng(marcacao.getLatitude(), marcacao.getLongitude());
 
-            final BitmapDescriptor bitmapDescriptor;
+                String titulo = marcacao.getTitulo();
 
-            if (marcadores.get(i).getCategoria() != null && marcadores.get(i).getCategoria().equals("Entulho")) {
-                bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED);
-            } else {
-                bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE);
+                final BitmapDescriptor bitmapDescriptor;
+
+                if (marcacao.getCategoria() != null && marcacao.getCategoria().equals("Entulho")) {
+                    bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED);
+                } else {
+                    bitmapDescriptor = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE);
+                }
+
+                mMap.addMarker(new MarkerOptions()
+                        .position(posicao)
+                        .draggable(true)
+                        .title(titulo)
+                        .snippet(marcacao.getDescricao())
+                        .icon(bitmapDescriptor));
             }
 
-            mMap.addMarker(new MarkerOptions()
-                    .position(posicao)
-                    .draggable(true)
-                    .title(titulo)
-                    .snippet(marcadores.get(i).getDescricao())
-                    .icon(bitmapDescriptor));
-        }
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
