@@ -1,4 +1,4 @@
-package br.edu.faifaculdades.mapasustentavel;
+package br.edu.faifaculdades.mapasustentavel.utils;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -10,6 +10,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import br.edu.faifaculdades.mapasustentavel.R;
 
 /**
  * Utility class for access to runtime permissions.

@@ -76,10 +76,6 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.fragment_container, new GMapsFragment()).commit();
         } else if (id == R.id.nav_horaios_recolha) {
             fm.beginTransaction().replace(R.id.fragment_container, new HorariosFragment()).commit();
-        } else if (id == R.id.nav_avisos) {
-            fm.beginTransaction().replace(R.id.fragment_container, new AvisosFragment()).commit();
-        } else if (id == R.id.nav_eventos) {
-            fm.beginTransaction().replace(R.id.fragment_container, new EventosFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

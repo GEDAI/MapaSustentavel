@@ -1,66 +1,82 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context="br.edu.faifaculdades.mapasustentavel.ui.MarcadorFragment">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Categoria"
+        android:textSize="18sp" />
 
-        <TableLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+    <Spinner
+        android:id="@+id/Lixo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Titulo"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text">
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Descrição"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/txtDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <HorizontalScrollView
+        android:id="@+id/marcador_imagens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="0,1,2" >
+            android:orientation="horizontal">
 
-
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Categoria" />
+                android:background="@drawable/cast_album_art_placeholder"/>
 
-            <Spinner
-                android:id="@+id/Lixo"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Titulo" />
+                android:background="@drawable/cast_album_art_placeholder"
+                android:id="@+id/imageView" />
 
-            <EditText
-                android:id="@+id/txtTitulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="text">
-            </EditText>
+        </LinearLayout>
+    </HorizontalScrollView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Descrição" />
+    <Button
+        android:id="@+id/btnAdicionar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar"
+        />
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar" />
 
-            <EditText
-                android:id="@+id/txtDescricao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
 
-            <Button
-                android:id="@+id/btnAdicionar"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:text="Adicionar"
-                />
-            <Button
-                android:id="@+id/btnCancelar"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:text="Cancelar" />
-        </TableLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</LinearLayout>

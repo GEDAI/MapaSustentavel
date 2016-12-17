@@ -6,25 +6,18 @@ import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
-import br.edu.faifaculdades.mapasustentavel.PermissionUtils;
-import br.edu.faifaculdades.mapasustentavel.R;
+import br.edu.faifaculdades.mapasustentavel.DatabaseHelper;
+import br.edu.faifaculdades.mapasustentavel.utils.PermissionUtils;
 
 /**
  * Created by ricardowerlang on 18/09/16.
